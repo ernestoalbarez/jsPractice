@@ -6,7 +6,7 @@ Práctica realizando funciones simples con edades
 
 - Paso 1: Ingreso de cantidad de intetrantes
   - Creará tantos inputs de edades como se indique
-  - Vaida que el dato ingresado sea mayor a cero
+  - Valida que el dato ingresado sea mayor a cero
 
 - Paso 2: Ingreso de edades
   - Se muestran los inputs para edades
