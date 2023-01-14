@@ -9,7 +9,6 @@
     <title>Practica Edades</title>
 </head>
 <body>
-
     <form id="form-calculador" onsubmit="return false;">
         <div id="preguntar">
             <h2>Paso 1:</h2>
@@ -17,25 +16,20 @@
             <input type="number" id="cantidad-integrantes"/>
             <button type="submit" id="siguiente-paso">Siguiente</button>
         </div>
-
         <div id="integrantes" class="oculto">
             <h2>Paso 2: Ingrese edades</h2>
         </div>
-
         <button type="button" id="calcular-edades" class="oculto">Calcular</button>
-
         <div id="analisis" class="oculto">
             <h2>Paso 3: Analisis de edades</h2>
             <p>La edad mayor es: <strong id="mayor-edad"></strong></p>
             <p>La menor edad es: <strong id="menor-edad"></strong></p>
             <p>El promedio de edad es: <strong id="promedio-edad"></strong></p>
         </div>
-
         <div id="error-dato" class="oculto">
             <h2>Algo salió mal</h2>
             <p>No se ingresó un dato válido</p>
         </div>
-        
         <div id="resetear" class="oculto">
             <p>Presionar el boton para comenzar denuevo</p>
             <button type="reset" id="boton-reset">Resetear</button>

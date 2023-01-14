@@ -20,7 +20,7 @@ function borrarElementosHTML(selector) {
         element.remove()
     })
 }
-
+    
 function ocultarElemento(elemento) {
     elemento.className = 'oculto'
 }
@@ -49,7 +49,6 @@ function buscarMenor(numeros) {
     return menor
 }
 
-
 function calcularPromedio(numeros) { 
     let suma = 0
     numeros.forEach(element => {
@@ -61,7 +60,9 @@ function calcularPromedio(numeros) {
 function obtenerEdades(listaDeEdades) {
     const edades = []
     listaDeEdades.forEach(element => {
-        edades.push(Number(element.value))
+        if(element.value >=0 ) {
+            edades.push(Number(element.value))
+        }
     })
     return edades
 }
