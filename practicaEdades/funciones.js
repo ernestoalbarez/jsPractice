@@ -66,3 +66,45 @@ function obtenerEdades(listaDeEdades) {
     })
     return edades
 }
+
+function ocultarPasoIngresoIntegrantes() {
+    ocultarElemento($divPreguntar)
+}
+
+function ocultarPasoIngresoEdades() {
+    ocultarElemento($divIntegrantes)
+    ocultarElemento($botonCalcularEdades)
+}
+
+function mostrarPasoIngresoEdades() {
+    crearInputsConLabel(Number($cantidadDeIntegrantes.value),$divIntegrantes)
+    mostrarElemento($divIntegrantes)
+    mostrarElemento($botonCalcularEdades)
+}
+
+function mostrarPasoResultado() {
+    mostrarElemento($divAnalisis)
+    mostrarElemento($divReset)
+    calcularEdadesIngresadas()
+}
+
+function calcularEdadesIngresadas() {
+    const $listaDeEdades = document.querySelectorAll('.input-edad')
+    let arrayEdades = obtenerEdades($listaDeEdades)
+    $mayorEdad.innerText = buscarMayor(arrayEdades)
+    $menorEdad.innerText = buscarMenor(arrayEdades)
+    $promedioEdad.innerText = calcularPromedio(arrayEdades)
+}
+
+function volverAlPasoIngresoIntegrantes() {
+    ocultarElemento($divAnalisis)
+    ocultarElemento($divReset)
+    ocultarElemento($errorDato)
+    borrarElementosHTML('.integrante')
+    mostrarElemento($divPreguntar)
+}
+
+function error() {
+    mostrarElemento($errorDato)
+    mostrarElemento($divReset)
+}
