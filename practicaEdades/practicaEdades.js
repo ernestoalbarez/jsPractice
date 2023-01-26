@@ -16,35 +16,20 @@ Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como
 */
 
 $botonSiguientePaso.onclick = function() {
-    let cantidad = Number($cantidadDeIntegrantes.value)
-    ocultarElemento($divPreguntar)
-    if(cantidad > 0) {
-        crearInputsConLabel(cantidad,$divIntegrantes)
-        mostrarElemento($divIntegrantes)
-        mostrarElemento($botonCalcularEdades)
+    ocultarPasoIngresoIntegrantes()
+    if(Number($cantidadDeIntegrantes.value) > 0) {
+        mostrarPasoIngresoEdades()
     }
     else {
-        mostrarElemento($errorDato)
-        mostrarElemento($divReset)
+        error()
     }
 }
 
 $botonCalcularEdades.onclick = function() {
-    const $listaDeEdades = document.querySelectorAll('.input-edad')
-    let arrayEdades = obtenerEdades($listaDeEdades)
-    ocultarElemento($divIntegrantes)
-    ocultarElemento($botonCalcularEdades)
-    $mayorEdad.innerText = buscarMayor(arrayEdades)
-    $menorEdad.innerText = buscarMenor(arrayEdades)
-    $promedioEdad.innerText = calcularPromedio(arrayEdades)
-    mostrarElemento($divAnalisis)
-    mostrarElemento($divReset)
+    ocultarPasoIngresoEdades()
+    mostrarPasoResultado()
 }
 
 $botonReset.onclick = function() {
-    ocultarElemento($divAnalisis)
-    ocultarElemento($divReset)
-    ocultarElemento($errorDato)
-    borrarElementosHTML('.integrante')
-    mostrarElemento($divPreguntar)
+    volverAlPasoIngresoIntegrantes()
 }
