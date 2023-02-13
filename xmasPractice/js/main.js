@@ -5,7 +5,6 @@ const ciudad = $formulario.ciudad.value
 const descripcionRegalo = $formulario['descripcion-regalo'].value
 
 function validarNombre(nombre) {
-    //return (/^[A-Z]{1,50}$/i).test(nombre)
     return (/^[A-Z]{1,50}$/i).test(nombre)
 }
 
@@ -27,7 +26,6 @@ function manejarErrores(errores) {
             $formulario[llave].className = 'error'
         }
     })
-    evento.preventDefault()
 }
 
 $formulario.onsubmit = function(evento) {
