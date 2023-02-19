@@ -1,7 +1,6 @@
 from js_webpractice.src.page_object.practica_edades_locators import Locators
 from selenium.webdriver.common.by import By
 import random
-from time import sleep
 
 
 class PracticaEdades(object):

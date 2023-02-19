@@ -4,7 +4,6 @@ from js_webpractice.src.page_object.practica_edades_locators import Locators
 from selenium.webdriver.common.by import By
 import unittest
 import random
-from time import sleep
 
 
 class TestPracticaEdades(WebDriverSetup):
