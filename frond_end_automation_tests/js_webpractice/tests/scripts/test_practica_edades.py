@@ -96,3 +96,37 @@ class TestPracticaEdades(WebDriverSetup):
             "Paso 3: Analisis de edades",
             "Error: título del paso análisis no coincide"
         )
+    def test_pantalla_error_cantidad_integrantes(self):
+        driver = self.driver
+        self.driver.get(Locators.app_url)
+        self.driver.set_page_load_timeout(30)
+
+        practica_edades = PracticaEdades(driver)
+        practica_edades.agregar_cantidad_integrtantes(0)
+
+        self.assertTrue(
+            self.driver.find_element(By.XPATH, Locators.h2_pantalla_error).is_displayed(),
+            "Error: el título de pantalla de error no está visible"
+        )
+
+        self.assertEqual(
+            self.driver.find_element(By.XPATH, Locators.h2_pantalla_error).text,
+            "Algo salió mal",
+            "Error: el título de pantalla de error no conincide"
+        )
+
+        self.assertTrue(
+            self.driver.find_element(By.XPATH, Locators.texto_pantalla_error).is_displayed(),
+            "Error: el texto de  error no está visible"
+        )
+
+        self.assertEqual(
+            self.driver.find_element(By.XPATH, Locators.texto_pantalla_error).text,
+            "No se ingresó un dato válido",
+            "Error: el texto de error no conincide"
+        )
+
+        self.assertTrue(
+            self.driver.find_element(By.ID, Locators.boton_reset).is_displayed(),
+            "Error: el botón de reset no está visible"
+        )

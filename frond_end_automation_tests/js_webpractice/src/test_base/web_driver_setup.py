@@ -9,7 +9,7 @@ class WebDriverSetup(unittest.TestCase):
         self.driver.maximize_window()
 
     def tearDown(self):
-        if self.driver != None:
+        if self.driver is not None:
             print("Cleanup of test environment")
             self.driver.close()
             self.driver.quit()

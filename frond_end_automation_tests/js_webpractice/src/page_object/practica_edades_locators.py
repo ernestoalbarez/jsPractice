@@ -18,3 +18,5 @@ class Locators:
     texto_error = "error-dato"
     boton_reset = "boton-reset"
 
+    h2_pantalla_error = "//div[@id='error-dato']/h2"
+    texto_pantalla_error = "//div[@id='error-dato']/p"
