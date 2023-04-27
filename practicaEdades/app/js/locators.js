@@ -1,3 +1,4 @@
+const $formulario = document.querySelector('#mi-formulario')
 const $divPreguntar = document.querySelector('#preguntar')
 const $divIntegrantes = document.querySelector('#integrantes')
 const $cantidadDeIntegrantes = document.querySelector('#cantidad-integrantes')

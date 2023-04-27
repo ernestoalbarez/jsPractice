@@ -1,3 +1,11 @@
+function abrirFormulario() {
+    $formulario.style.display = 'block';
+}
+  
+function cerrarFormulario() {
+    $formulario.style.display = 'none';
+}
+
 function crearInputsConLabel(cantidad, padre) {
     for(let i=1; i<=cantidad; i++) {
         const nuevoDiv = document.createElement('div')

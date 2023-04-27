@@ -9,32 +9,48 @@
     <title>Practica Edades</title>
 </head>
 <body>
-    <form id="form-calculador" onsubmit="return false;">
-        <div id="preguntar">
-            <h2>Paso 1:</h2>
-            <label for="cantidad-integrantes">Ingrese la cantidad de integrantes</label>
-            <input type="number" id="cantidad-integrantes"/>
-            <button type="submit" id="siguiente-paso">Siguiente</button>
-        </div>
-        <div id="integrantes" class="oculto">
-            <h2>Paso 2: Ingrese edades</h2>
-        </div>
-        <button type="button" id="calcular-edades" class="oculto">Calcular</button>
-        <div id="analisis" class="oculto">
-            <h2>Paso 3: Analisis de edades</h2>
-            <p>La edad mayor es: <strong id="mayor-edad"></strong></p>
-            <p>La menor edad es: <strong id="menor-edad"></strong></p>
-            <p>El promedio de edad es: <strong id="promedio-edad"></strong></p>
-        </div>
-        <div id="error-dato" class="oculto">
-            <h2>Algo salió mal</h2>
-            <p>No se ingresó un dato válido</p>
-        </div>
-        <div id="resetear" class="oculto">
-            <p>Presionar el boton para comenzar denuevo</p>
-            <button type="reset" id="boton-reset">Resetear</button>
-        </div>
-    </form>
+
+     <!-- A button to open the popup form -->
+     <button id="open-button" onclick="abrirFormulario()">Comenzar formulario</button>
+
+    <!-- The form -->
+    <div class="form-popup" id="mi-formulario" onsubmit="return false;">
+        <form class="form-container">
+            <div id="preguntar">
+                <h2>Paso 1:</h2>
+                
+                <label for="cantidad-integrantes"><b>Ingrese la cantidad de integrantes</b></label>
+                <input type="number" id="cantidad-integrantes" required/>
+
+                <button type="submit" id="siguiente-paso">Siguiente</button>
+                <button type="button" class="btn-cancel" onclick="cerrarFormulario()">Cancelar</button>
+            </div>
+
+            <div id="integrantes" class="oculto">
+                <h2>Paso 2: Ingrese edades</h2>
+            </div>
+
+            <button type="button" id="calcular-edades" class="oculto">Calcular</button>
+
+            <div id="analisis" class="oculto">
+                <h2>Paso 3: Analisis de edades</h2>
+                <p>La edad mayor es: <strong id="mayor-edad"></strong></p>
+                <p>La menor edad es: <strong id="menor-edad"></strong></p>
+                <p>El promedio de edad es: <strong id="promedio-edad"></strong></p>
+            </div>
+
+            <div id="error-dato" class="oculto">
+                <h2>Algo salió mal</h2>
+                <p>No se ingresó un dato válido</p>
+            </div>
+
+            <div id="resetear" class="oculto">
+                <p>Presionar el boton para comenzar denuevo</p>
+                <button type="reset" id="boton-reset">Resetear</button>
+            </div>
+        </form>
+    </div>
+
     <script type="text/javascript" src="app/js/locators.js"></script>
     <script type="text/javascript" src="app/js/funciones.js"></script>
     <script type="text/javascript" src="app/js/practicaEdades.js"></script>
