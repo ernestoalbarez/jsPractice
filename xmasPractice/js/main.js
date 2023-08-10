@@ -1,6 +1,7 @@
 const $formulario = document.querySelector('[name=formulario]')
 const $contenedorErrores = document.getElementById('errores')
 const $msjExito = document.getElementById('exito')
+const timeout = 5000;
 
 $formulario.onsubmit = function(evento) {
     evento.preventDefault()
@@ -14,6 +15,7 @@ $formulario.onsubmit = function(evento) {
     }
     if(!fnManejarErrores(errores)) {
         fnMostrarMsjExito()
+        fnRedirigirWishlistPage(timeout)
     }
 }
 
@@ -72,4 +74,11 @@ function fnEliminarMensajesErrorHTML(){
 function fnMostrarMsjExito() {
     $msjExito.className = ''
     $formulario.className = 'oculto'
+}
+
+function fnRedirigirWishlistPage(tiempo) {
+    const wishlistPage = "wishlist.html"
+    setTimeout(() => {
+        window.location.href = wishlistPage 
+    }, tiempo)
 }
