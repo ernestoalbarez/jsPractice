@@ -8,16 +8,21 @@ function cerrarFormulario() {
 
 function crearInputsConLabel(cantidad, padre) {
     for(let i=1; i<=cantidad; i++) {
-        const nuevoDiv = document.createElement('div')
-        nuevoDiv.className = 'integrante';
         const nuevoLabel = document.createElement('label')
-        const nuevoInput = document.createElement('input')
         nuevoLabel.className = 'label-edad'
         nuevoLabel.innerText = `Integrante ${i}:`
+        
+        const nuevoInput = document.createElement('input')
         nuevoInput.type = 'number'
         nuevoInput.className = 'input-edad'
+        nuevoInput.onfocus=`${this.value=''}`
+        nuevoInput.value="0"
+
+        const nuevoDiv = document.createElement('div')
+        nuevoDiv.className = 'integrante';
         nuevoDiv.appendChild(nuevoLabel)
         nuevoDiv.appendChild(nuevoInput)
+        
         padre.appendChild(nuevoDiv)
     }
 }

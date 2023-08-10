@@ -15,6 +15,14 @@ Al hacer click en "calcular", mostrar en un elemento pre-existente el mayor sala
 Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como 0).
 */
 
+
+$cantidadDeIntegrantes.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    $botonSiguientePaso.click();
+  }
+})
+
 $botonSiguientePaso.onclick = function() {
     ocultarPasoIngresoIntegrantes()
     if(Number($cantidadDeIntegrantes.value) > 0) {

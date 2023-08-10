@@ -20,9 +20,9 @@
                 <h2>Paso 1:</h2>
                 
                 <label for="cantidad-integrantes"><b>Ingrese la cantidad de integrantes</b></label>
-                <input type="number" id="cantidad-integrantes" required/>
+                <input type="number" id="cantidad-integrantes" onfocus="this.value=''" value="0" required/>
 
-                <button type="submit" id="siguiente-paso">Siguiente</button>
+                <button type="submit" id="siguiente-paso" class="btn-siguiente">Siguiente</button>
                 <button type="button" class="btn-cancel" onclick="cerrarFormulario()">Cancelar</button>
             </div>
 
