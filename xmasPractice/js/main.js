@@ -1,5 +1,6 @@
 const $formulario = document.querySelector('[name=formulario]')
 const $contenedorErrores = document.getElementById('errores')
+const $msjExito = document.getElementById('exito')
 
 $formulario.onsubmit = function(evento) {
     evento.preventDefault()
@@ -11,7 +12,9 @@ $formulario.onsubmit = function(evento) {
         ciudad: fnValidarCiudad(ciudad),
         'descripcion-regalo': fnValidarDescripcionRegalo(descripcionRegalo)
     }
-    fnManejarErrores(errores)
+    if(!fnManejarErrores(errores)) {
+        fnMostrarMsjExito()
+    }
 }
 
 // Funciones //
@@ -64,4 +67,9 @@ function fnEliminarMensajesErrorHTML(){
     .forEach(msjError => {
         msjError.remove()
     })
+}
+
+function fnMostrarMsjExito() {
+    $msjExito.className = ''
+    $formulario.className = 'oculto'
 }
